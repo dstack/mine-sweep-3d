@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head></head>
+
+  <body>
+
+    <div id="render-ct"></div>
+    <div id="ui-ct">
+      <div class="cover">
+        <div id="settings-card" class="card">
+          <h2>New Game Settings</h2>
+          <label>
+            Preset<br/>
+            <select onchange="window.EVT.emit('settings-from-preset', this.value); return false;">
+              <option selected value="custom">Custom</option>
+              <option value="3|5">Tiny</option>
+              <option value="4|10">Beginner</option>
+              <option value="5|30">Intermediate</option>
+              <option value="6|45">Middling</option>
+              <option value="8|90">Pro</option>
+              <option value="10|200">Expert</option>
+              <option value="16|600">Insane</option>
+            </select>
+          </label>
+          <label>
+            Cube Size<br/>
+            <input id="setting-cube-size" type="number" value="3" min="2" max="32" />
+          </label>
+
+          <label>
+            Mine Count<br/>
+            <input id="setting-mine-count" type="number" value="5" min="4" />
+          </label>
+          <br/><br/>
+          <a href="#" class="btn" onclick="window.EVT.emit('main-menu'); return false;">Back</a>
+          <a href="#" class="btn" onclick="window.EVT.emit('new-game'); return false;">Start Game</a>
+        </div>
+        <div id="lose-card" class="card">
+          <h2>You Lose&hellip;</h2>
+          <a href="#" class="btn" onclick="window.EVT.emit('new-game'); return false;">Retry</a>
+          <a href="#" class="btn" onclick="window.EVT.emit('setup-game'); return false;">New Game</a>
+        </div>
+        <div id="win-card" class="card">
+          <h2>You Won!</h2>
+          <a href="#" class="btn inverse" onclick="window.EVT.emit('new-game'); return false;">Retry</a>
+          <a href="#" class="btn inverse" onclick="window.EVT.emit('setup-game'); return false;">New Game</a>
+        </div>
+        <div id="intro-card" class="card">
+          <h2>MineFinder 3D</h2>
+          <a href="#" class="btn" onclick="window.EVT.emit('setup-game'); return false;">New Game</a>
+          <a href="#" class="btn" onclick="window.EVT.emit('about'); return false;">About</a>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <a href="#" class="close" onclick="window.EVT.emit('hide-about'); return false;">X</a>
+      <h1>MineFinder 3D</h1>
+      <p><small>a game by <a target="_blank" href="http://drewstrickland">Drew Strickland</a>.</small></p>
+      <p>
+        Recently I did an interview for a consulting position.  The interviewing developer happened to be a veteran of the gaming industry, and more or less had me whiteboard Minesweeper.
+        Normally, for these types of interviews, they ask you to do, FizzBuzz, or OOP with "give the dog legs", or maybe even some basic debugging with some code on paper.  Minesweeper on a whiteboard was a welcome refreshing change.
+      </p>
+      <p>
+        Before this interview, even though I have always been interested in game development, I had never looked at, or even really thought about, how Minesweeper works.
+        Because of that, this was probably the most fun I have ever had whiteboarding, so much in fact, I brought it home and kept going.
+      </p>
+      <p>
+        Earlier this year, I promised myself I was going to release at least one game in 2016.  I never would have imagined it would be a version of Minesweeper, but once I really got into it, this was a really fun experience.
+      </p>
+      <h2>About the Code</h2>
+      <p>
+        This game uses <a href="http://threejs.org" target="_blank">THREE.js</a> for rendering.  The majority of the game logic is written in ES2015, then run through babel to work in browsers.
+      </p>
+      <p>
+        Because this game exists mostly to fulfill my personal goals and as an exploration of JavaScript's GC pitfalls, I have released the source as <a href="#" target="_blank">a public github repo</a>.
+      </p>
+    </div>
+    <script src="js/game.pack.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+@import 'nib'
+global-reset()
+
+*
+  box-sizing border-box
+
+html
+  body
+    overflow hidden
+    font-family Calibri, Helvetica, sans-serif
+
+
+canvas
+  margin 0px
+  padding 0px
+
+#render-ct
+  width 100%
+  height 100%
+  absolute top 0px left 0px
+
+#ui-ct
+  width 100%
+  height 100%
+  fixed top 0px left 0px
+.cover
+  width 100%
+  height 100%
+  absolute top 0px left 0px
+  background rgba(0,0,0,0.32)
+  .card
+    box-shadow 0px 3px 5px rgba(0,0,0,0.32)
+    width 110%
+    absolute top 50% left -110%
+    padding 25px 15%
+    margin-top -250px
+    transition all 0.3s
+    &.visible
+      left: -5%
+    h2
+      font-size 1.5em
+      font-weight 100
+      margin-bottom 13px
+    label
+      display inline-block
+      margin-right 10px
+    .btn
+      display inline-block
+      padding 12px 16px
+      color #fff
+      text-decoration none
+      text-transform uppercase
+      border-radius 5px
+      border solid 1px white
+      font-size 1.25em
+      &.inverse
+        color #333
+        border-color #333
+  #lose-card
+    color #fff
+    background #f00
+  #win-card
+    color #333
+    background #DFFF0D
+  #intro-card
+    color #fff
+    background #33ccff
+  #settings-card
+    color #fff
+    background #600CE8
+
+#about
+  fixed top -100% left 0px
+  width 100%
+  height 100%
+  padding 26px
+  background #333
+  color #e8e8e8
+  overflow auto
+  transition all 0.5s
+  a
+    color #e8e8e8
+    &:hover
+      color #fff
+  .close
+    font-size 2em
+    absolute top 26px right 26px
+    color #e8e8e8
+    text-decoration none
+  &.visible
+    top 0%
+  h1, h2, h3, h4, h5, h6
+    margin-bottom 0.3em
+  p
+    margin-bottom 2em
+  small
+    font-size 0.8em
+  h1
+    font-size 2em
+  h2
+    font-size 1.75em
