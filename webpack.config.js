@@ -15,7 +15,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       THREE: 'three'
     }),
-    //new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   module: {
     loaders: [
