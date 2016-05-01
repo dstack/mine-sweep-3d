@@ -107,6 +107,7 @@ export default class GameInterface{
     this.controls.enableDamping = true;
 		this.controls.dampingFactor = 0.25;
 		this.controls.enableZoom = false;
+    this.controls.enablePan = false;
 
     this.raycaster = new THREE.Raycaster();
 
