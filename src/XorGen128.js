@@ -8,7 +8,7 @@ export default class XorGen128 {
 
     var strSeed = '';
     if(seed === (seed | 0)){
-      me.x = seed;
+      this.x = seed;
     }
     else{
       strSeed += seed;

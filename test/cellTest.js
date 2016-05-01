@@ -7,7 +7,7 @@ var expect = chai.expect;
 
 var assert = require('chai').assert;
 describe('Cell', function() {
-  describe('constructor', function () {
+  describe('constructor()', function () {
     it('should allow long form construction', function () {
       var nc = new Cell(1,2,3);
       expect(nc).to.be.a('object');
