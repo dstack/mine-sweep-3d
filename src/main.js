@@ -146,9 +146,9 @@ EVT.on('set-size', (val) => {
 
 EVT.on('set-count', (val) => {
   var size = document.getElementById('setting-cube-size').value;
-  var mct = Math.min(val, Math.floor(size * 0.75));
+  var mct = Math.min(val, Math.floor(Math.pow(size, 3) * 0.75));
   state.setBombs = mct;
-  document.getElementById('setting-mine-count').value = size;
+  document.getElementById('setting-mine-count').value = mct;
 });
 
 EVT.on('settings-from-preset', (val) => {
