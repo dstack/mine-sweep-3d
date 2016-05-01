@@ -52,6 +52,11 @@ function showSettingsCard(){
   document.getElementById('settings-card').classList.add('visible');
 }
 
+function showTutorialCard(){
+  hideAllCards()
+  document.getElementById('tut-card').classList.add('visible');
+}
+
 function showAbout(){
   document.getElementById('about').classList.add('visible');
 }
@@ -119,6 +124,10 @@ EVT.on('setup-game', () => {
 
 EVT.on('main-menu', () => {
   showIntroCard();
+});
+
+EVT.on('tutorial', () => {
+  showTutorialCard();
 });
 
 EVT.on('about', () => {

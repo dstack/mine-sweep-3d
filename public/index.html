@@ -9,6 +9,22 @@
     <div id="render-ct"></div>
     <div id="ui-ct">
       <div class="cover">
+        <div id="tut-card" class="card">
+          <h2>How to Play</h2>
+          <p>
+            Click a cell to test it.  If there are 0 mines next to the cell, it will clear and continue clearing.  Otherwise it will show you how many mines are touching that cell.
+          </p>
+          <p>
+            Right-Click a cell to cycle it's mark.  Purple cells are tentatively marked to help you keep track.  Red cells are ones you have marked as mines.
+          </p>
+          <p>
+            If you test a cell and it's a mine, game over.
+          </p>
+          <p>
+            To win, mark all the mines red, and get rid of every other cell.
+          </p>
+          <a href="#" class="btn inverse" onclick="window.EVT.emit('main-menu'); return false;">Back</a>
+        </div>
         <div id="settings-card" class="card">
           <h2>New Game Settings</h2>
           <label>
@@ -50,8 +66,10 @@
         <div id="intro-card" class="card">
           <h2>MineFinder 3D</h2>
           <a href="#" class="btn" onclick="window.EVT.emit('setup-game'); return false;">New Game</a>
+          <a href="#" class="btn" onclick="window.EVT.emit('tutorial'); return false;">How to Play</a>
           <a href="#" class="btn" onclick="window.EVT.emit('about'); return false;">About</a>
         </div>
+
       </div>
     </div>
     <div id="about">
