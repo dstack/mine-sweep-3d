@@ -42,12 +42,12 @@
           </label>
           <label>
             Cube Size<br/>
-            <input id="setting-cube-size" type="number" value="3" min="2" max="32" />
+            <input id="setting-cube-size" type="number" value="3" min="2" max="32" onchange="window.EVT.emit('set-size', this.value); return false;" />
           </label>
 
           <label>
             Mine Count<br/>
-            <input id="setting-mine-count" type="number" value="5" min="4" />
+            <input id="setting-mine-count" type="number" value="5" min="4" onchange="window.EVT.emit('set-count', this.value); return false;" />
           </label>
           <br/><br/>
           <a href="#" class="btn" onclick="window.EVT.emit('main-menu'); return false;">Back</a>

@@ -138,6 +138,19 @@ EVT.on('hide-about', () => {
   hideAbout();
 });
 
+EVT.on('set-size', (val) => {
+  var size = Math.min(Math.max(val, 2), 32);
+  state.setSize = size;
+  document.getElementById('setting-cube-size').value = size;
+});
+
+EVT.on('set-count', (val) => {
+  var size = document.getElementById('setting-cube-size').value;
+  var mct = Math.min(val, Math.floor(size * 0.75));
+  state.setBombs = mct;
+  document.getElementById('setting-mine-count').value = size;
+});
+
 EVT.on('settings-from-preset', (val) => {
   if(val != 'custom'){
     var split = val.split('|'),
